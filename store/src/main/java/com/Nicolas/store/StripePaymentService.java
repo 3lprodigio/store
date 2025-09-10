@@ -13,7 +13,7 @@ public class StripePaymentService {
 
     public PaymentResult processPayment(double amount, String orderID){
 
-        logger.info("Proccesing payment for orderID={} amount={}",orderID, amount);
+    logger.info("Processing payment for orderID={} amount={}", orderID, amount);
 
         String txID = "tx_" + System.currentTimeMillis();
         return new PaymentResult(true,txID,null);
