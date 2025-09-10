@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.Nicolas.store.dto.OrderRequest;
 import com.Nicolas.store.dto.OrderResult;
 
+import jakarta.validation.Valid;
+
 @Controller
 public class HomeController {
     private final OrderService orderService;
@@ -27,7 +29,7 @@ public class HomeController {
 
     @PostMapping("/order")
     @ResponseBody
-    public OrderResult placeOrder(@RequestBody OrderRequest req){
+    public OrderResult placeOrder(@Valid @RequestBody OrderRequest req){
         return orderService.placeOrder(req);
     }
 }
